@@ -1,0 +1,75 @@
+.navbar-bg-color {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  height: 60px;
+  width: 100%;
+  /* position: fixed; */
+}
+.header-logo {
+  width: 80px;
+  height: 30px;
+}
+.search-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.menu-btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.profile-image {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  /* display: none; */
+  visibility: hidden;
+  text-align: center;
+}
+.actions-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .profile-image {
+    margin-right: 10px;
+    visibility: visible;
+    margin-bottom: 10px;
+  }
+  .navbar-bg-color {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  .menu-btn {
+    visibility: hidden;
+  }
+  .search-btn {
+    margin-right: 22px;
+  }
+}
+
+.header-logo-links-container {
+  align-self: initial;
+  list-style-type: none;
+  display: flex;
+  margin-left: -20%;
+}
+.header-logo-each-link {
+  margin-right: 20px;
+}
+@media screen and (max-width: 768px) {
+  .header-logo-links-container {
+    display: none;
+  }
+}

@@ -1,0 +1,64 @@
+@media screen and (min-width: 768px) {
+  .sm-devices {
+    display: none;
+  }
+}
+.lg-devices {
+  visibility: hidden;
+}
+@media screen and (min-width: 768px) {
+  .lg-devices {
+    visibility: visible;
+  }
+}
+.home-poster-title {
+  font-family: 'HK Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  line-height: 46.91px;
+  color: #ffffff;
+}
+
+.home-poster-overview {
+  font-family: 'HK Grotesk';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+
+  color: #ffffff;
+}
+.heading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px;
+}
+.home-poster-play-btn {
+  /* padding: 10px 20px; */
+  background: #ffffff;
+  border-radius: 4px;
+  width: 76px;
+  height: 32px;
+
+  outline: none;
+  border: none;
+  margin-top: 10px;
+}
+@media screen and (min-width: 768px) {
+  .home-poster-title {
+    font-size: 64px;
+    font-weight: 600;
+    line-height: 62px;
+  }
+  .home-poster-overview {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+  }
+  .home-poster-play-btn {
+    width: 74px;
+    height: 40px;
+  }
+}

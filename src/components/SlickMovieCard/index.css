@@ -1,0 +1,51 @@
+.slick-movie-img {
+  margin: 0px 5px;
+  height: 90px;
+  width: 64px;
+  border-radius: 10px;
+}
+.react-slick-li-item {
+  padding: 0;
+  margin: 0;
+}
+.slick-app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.react-slick-item {
+  background: transparent;
+}
+
+.slick-app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 567px) {
+  .slick-movie-img {
+    margin: 0px 5px;
+    height: 120px;
+    width: 120px;
+  }
+}
+
+@media (min-width: 768px) {
+  .slick-movie-img {
+    margin: 0px 15px;
+    height: 120px;
+    width: 120px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slick-movie-img {
+    margin: 0px 30px;
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+  }
+}
