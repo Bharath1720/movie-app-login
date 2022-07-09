@@ -1,5 +1,5 @@
 import {Component} from 'react'
-
+import {Link} from 'react-router-dom'
 import './index.css'
 
 import Slider from 'react-slick'
@@ -49,13 +49,15 @@ class SlickMovieCard extends Component {
       <>
         <Slider {...settings}>
           {movies.map(each => (
-            <li className="react-slick-li-item" key={each.id}>
-              <img
-                className="slick-movie-img"
-                src={each.posterPath}
-                alt={each.originalTitle}
-              />
-            </li>
+            <Link to={`/movies/${each.id}`}>
+              <li className="react-slick-li-item" key={each.id}>
+                <img
+                  className="slick-movie-img"
+                  src={each.posterPath}
+                  alt={each.originalTitle}
+                />
+              </li>
+            </Link>
           ))}
         </Slider>
       </>

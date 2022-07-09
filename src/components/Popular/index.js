@@ -1,7 +1,7 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
-
+import {Link} from 'react-router-dom'
 import './index.css'
 import FailureView from '../FailureView'
 import Header from '../Header'
@@ -76,13 +76,15 @@ class Popular extends Component {
       <>
         <ul className="popular-ul-container">
           {popularMovies.map(each => (
-            <li className="popular-li-item" key={each.id}>
-              <img
-                className="popular-poster"
-                src={each.posterPath}
-                alt={each.title}
-              />
-            </li>
+            <Link to={`/movies/${each.id}`}>
+              <li className="popular-li-item" key={each.id}>
+                <img
+                  className="popular-poster"
+                  src={each.posterPath}
+                  alt={each.title}
+                />
+              </li>
+            </Link>
           ))}
         </ul>
       </>

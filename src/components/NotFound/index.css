@@ -1,0 +1,52 @@
+not-found-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #181818;
+  min-height: 92vh;
+  /* margin-top: 160px; */
+  /* margin-bottom: 60px; */
+  overflow-y: auto;
+  margin: auto;
+}
+
+@media screen and (min-width: 768px) {
+  .not-found-container {
+    margin-top: 120px;
+    margin-bottom: 0px;
+  }
+}
+
+.not-found-videos-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: none;
+}
+
+.not-found-videos-img {
+  width: 200px;
+  margin-top: 200px;
+}
+
+@media screen and (min-width: 768px) {
+  .not-found-videos-img {
+    width: 450px;
+    margin-top: 0px;
+  }
+}
+
+.not-found-videos-heading {
+  font-family: Roboto;
+  font-size: 25px;
+  color: #f1f5f9;
+  text-align: center;
+}
+
+.not-found-videos-note {
+  font-family: Roboto;
+  font-size: 18px;
+  color: #f1f5f9;
+  text-align: center;
+}
