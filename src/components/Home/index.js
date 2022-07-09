@@ -2,7 +2,8 @@ import {Component} from 'react'
 
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
+// import {AiOutlineClose} from 'react-icons/ai'
 import HomePoster from '../HomePoster'
 import Header from '../Header'
 import './index.css'
@@ -104,32 +105,6 @@ class Home extends Component {
     return (
       <div className="root-container">
         <Header />
-        <div className="banner-home-container">
-          <div className="banner-container">
-            <ul className="banner-left-part">
-              <Link to="/">
-                <li>
-                  <button className="banner-btn" type="button">
-                    Home
-                  </button>
-                </li>
-              </Link>
-              <Link to="/popular">
-                <li>
-                  <button className="banner-btn" type="button">
-                    Popular
-                  </button>
-                </li>
-              </Link>
-
-              <li>
-                <button className="banner-btn" type="button">
-                  Account
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
         <div className="home-sizes-container">{this.renderHomePoster()}</div>
         <div>
           <div>

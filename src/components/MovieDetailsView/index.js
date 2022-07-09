@@ -102,7 +102,7 @@ class MovieDetailView extends Component {
 
   renderLoadingView = () => (
     <div className="loader-container">
-      <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
+      <Loader type="TailSpin" height={35} width={380} color=" #D81F26" />
     </div>
   )
 
@@ -229,32 +229,6 @@ class MovieDetailView extends Component {
       <div className="dummy">
         <Header />
         <div className="root-container">
-          <div className="banner-home-container">
-            <div className="banner-container">
-              <ul className="banner-left-part">
-                <Link to="/">
-                  <li>
-                    <button className="banner-btn" type="button">
-                      Home
-                    </button>
-                  </li>
-                </Link>
-                <Link to="/popular">
-                  <li>
-                    <button className="banner-btn" type="button">
-                      Popular
-                    </button>
-                  </li>
-                </Link>
-
-                <li>
-                  <button className="banner-btn" type="button">
-                    Account
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </div>
           <div
             className="video-details-view-container"
             data-testid="videoItemDetails"

@@ -111,32 +111,6 @@ class Popular extends Component {
     return (
       <div className="main-popular-bg-black-container">
         <Header />
-        <div className="banner-home-container">
-          <div className="banner-container">
-            <ul className="banner-left-part">
-              <Link to="/">
-                <li>
-                  <button className="banner-btn" type="button">
-                    Home
-                  </button>
-                </li>
-              </Link>
-              <Link to="/popular">
-                <li>
-                  <button className="banner-btn" type="button">
-                    Popular
-                  </button>
-                </li>
-              </Link>
-
-              <li>
-                <button className="banner-btn" type="button">
-                  Account
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
         <div className="popular-result-container">
           {this.renderPopularMovies()}
         </div>

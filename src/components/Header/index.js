@@ -1,47 +1,127 @@
-import './index.css'
-import {Link} from 'react-router-dom'
-import {MdMenuOpen} from 'react-icons/md'
+import {Link, withRouter} from 'react-router-dom'
+import {Component} from 'react'
+
 import {HiOutlineSearch} from 'react-icons/hi'
+import {MdMenuOpen} from 'react-icons/md'
+import {ImCross} from 'react-icons/im'
 
-const Header = props => {
-  const {sample} = props
-  return (
-    <div className="navbar-bg-color">
-      <Link to="/">
-        <img
-          className="header-logo"
-          src="https://res.cloudinary.com/dyx9u0bif/image/upload/v1656594712/Group_7399_wrvd0n.png"
-          alt="website logo"
-        />
-      </Link>
+import './index.css'
 
-      <ul className="header-logo-links-container">
-        <Link to="/">
-          <li className="header-logo-each-link">Home</li>
-        </Link>
-        <Link to="/popular">
-          <li className="header-logo-each-link">Popular</li>
-        </Link>
-      </ul>
-      <div className="actions-container">
-        <button className="search-btn" type="button">
-          <HiOutlineSearch size={20} color="white" testid="searchButton" />
-        </button>
-        <img
-          className="profile-image"
-          src="https://res.cloudinary.com/dyx9u0bif/image/upload/v1656598609/Mask_Group_yc5cws.png"
-          alt="profile"
-        />
-        <button className="menu-btn" type="button">
-          <MdMenuOpen
-            color="#ffffff"
-            size={25}
-            className="menu-icon"
-            //   onClick={this.onClickMenu}
-          />
-        </button>
-      </div>
-    </div>
-  )
+class Header extends Component {
+  state = {
+    showMenu: false,
+    showSearchBar: false,
+  }
+
+  onClickShowMenu = () => {
+    this.setState({showMenu: true})
+  }
+
+  onClickHideMenu = () => {
+    this.setState({showMenu: false})
+  }
+
+  render() {
+    const {showMenu, showSearchBar} = this.state
+    const {match} = this.props
+    const {path} = match
+    let homeClassName
+    let popularClassName
+    let accountClassName
+
+    switch (path) {
+      case '/popular':
+        homeClassName = 'passive-one'
+        popularClassName = 'active-one'
+        accountClassName = 'passive-one'
+        break
+      case '/profile':
+        homeClassName = 'passive-one'
+        popularClassName = 'passive-one'
+        accountClassName = 'active-one'
+        break
+      default:
+        homeClassName = 'active-one'
+        popularClassName = 'passive-one'
+        accountClassName = 'passive-one'
+        break
+    }
+
+    return (
+      <nav className="nav-container">
+        <div className="nav-elements-container">
+          <Link to="/">
+            <img
+              src="https://res.cloudinary.com/dps34f4by/image/upload/v1646985280/Group_7399_1_rs0qmy.png"
+              className="app-logo"
+              alt="website logo"
+            />
+          </Link>
+          <ul className="list-items">
+            <Link to="/" className="link">
+              <li className={`pop-heading ${homeClassName}`}>Home</li>
+            </Link>
+            <Link to="/popular" className="link">
+              <li className={`pop-heading ${popularClassName}`}>Popular</li>
+            </Link>
+          </ul>
+          <div className="search-container">
+            {showSearchBar && (
+              <input type="search" placeholder="search" className="search" />
+            )}
+            <Link to="/search">
+              <button
+                type="button"
+                className="icon-button"
+                testid="searchButton"
+              >
+                <HiOutlineSearch
+                  size={20}
+                  color="white"
+                  testid="searchButton"
+                />
+              </button>
+            </Link>
+            <Link to="/account">
+              <img
+                src="https://res.cloudinary.com/dps34f4by/image/upload/v1647240547/Mask_Group_clhm8s.png"
+                className={`profile-logo ${accountClassName}`}
+                alt="profile"
+              />
+            </Link>
+            <MdMenuOpen
+              size={25}
+              color="white"
+              className="menu-icon"
+              onClick={this.onClickShowMenu}
+            />
+          </div>
+        </div>
+        {showMenu && (
+          <div>
+            <ul className="list-mini">
+              <Link to="/" className="link">
+                <li className={`pop-heading ${homeClassName}`}>Home</li>
+              </Link>
+              <Link to="/popular" className="link">
+                <li className={`pop-heading ${popularClassName}`}>Popular</li>
+              </Link>
+
+              <Link to="/account" className="link">
+                <li className={`pop-heading ${accountClassName}`}>Account</li>
+              </Link>
+              <ImCross
+                size={10}
+                color="#ffffff"
+                onClick={this.onClickHideMenu}
+                className="icon"
+              />
+            </ul>
+          </div>
+        )}
+      </nav>
+    )
+  }
 }
-export default Header
+
+export default withRouter(Header)
