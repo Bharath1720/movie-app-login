@@ -49,7 +49,7 @@ class SlickMovieCard extends Component {
       <>
         <Slider {...settings}>
           {movies.map(each => (
-            <Link to={`/movies/${each.id}`}>
+            <Link to={`/movies/${each.id}`} key={each.id}>
               <li className="react-slick-li-item" key={each.id}>
                 <img
                   className="slick-movie-img"

@@ -39,13 +39,13 @@ class Originals extends Component {
     const response = await fetch(apiUrl, options)
     if (response.ok === true) {
       const data = await response.json()
-      console.log(data)
+      // console.log(data)
       const updatedData = data.results.map(each => ({
         id: each.id,
         posterPath: each.poster_path,
         title: each.title,
       }))
-      console.log(updatedData)
+      // console.log(updatedData)
       this.setState({
         originals: updatedData,
         apiStatus: apiStatusConstants.success,

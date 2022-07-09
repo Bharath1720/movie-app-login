@@ -11,8 +11,8 @@ const MovieDetail = props => {
     overview,
     posterPath,
   } = movieDetails
-  console.log(posterPath)
-  console.log(backdropPath)
+  //  console.log(posterPath)
+  //  console.log(backdropPath)
   const hours = Math.floor(runtime / 60)
   const minutes = runtime % 60
   const date = new Date(releaseDate)

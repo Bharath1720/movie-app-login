@@ -7,11 +7,14 @@ const Header = props => {
   const {sample} = props
   return (
     <div className="navbar-bg-color">
-      <img
-        className="header-logo"
-        src="https://res.cloudinary.com/dyx9u0bif/image/upload/v1656594712/Group_7399_wrvd0n.png"
-        alt="website logo"
-      />
+      <Link to="/">
+        <img
+          className="header-logo"
+          src="https://res.cloudinary.com/dyx9u0bif/image/upload/v1656594712/Group_7399_wrvd0n.png"
+          alt="website logo"
+        />
+      </Link>
+
       <ul className="header-logo-links-container">
         <Link to="/">
           <li className="header-logo-each-link">Home</li>

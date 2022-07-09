@@ -2,6 +2,7 @@ import Loader from 'react-loader-spinner'
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {Link} from 'react-router-dom'
+
 import Footer from '../Footer'
 import FailureView from '../FailureView'
 // import PlayVideoView from '../PlayVideoView'
@@ -61,7 +62,7 @@ class MovieDetailView extends Component {
         runtime: each.runtime,
         posterPath: each.poster_path,
       }))
-      console.log(updatedData)
+      // console.log(updatedData)
       const genresData = data.movie_details.genres.map(each => ({
         id: each.id,
         name: each.name,
@@ -227,13 +228,41 @@ class MovieDetailView extends Component {
     return (
       <div className="dummy">
         <Header />
-        <div
-          className="video-details-view-container"
-          data-testid="videoItemDetails"
-        >
-          {this.renderVideoDetailView()}
+        <div className="root-container">
+          <div className="banner-home-container">
+            <div className="banner-container">
+              <ul className="banner-left-part">
+                <Link to="/">
+                  <li>
+                    <button className="banner-btn" type="button">
+                      Home
+                    </button>
+                  </li>
+                </Link>
+                <Link to="/popular">
+                  <li>
+                    <button className="banner-btn" type="button">
+                      Popular
+                    </button>
+                  </li>
+                </Link>
+
+                <li>
+                  <button className="banner-btn" type="button">
+                    Account
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            className="video-details-view-container"
+            data-testid="videoItemDetails"
+          >
+            {this.renderVideoDetailView()}
+          </div>
+          <Footer />
         </div>
-        <Footer />
       </div>
     )
   }

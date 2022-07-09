@@ -3,6 +3,7 @@ import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 import {Link} from 'react-router-dom'
 import './index.css'
+
 import FailureView from '../FailureView'
 import Header from '../Header'
 import Footer from '../Footer'
@@ -40,7 +41,7 @@ class Popular extends Component {
     const response = await fetch(apiUrl, options)
     if (response.ok === true) {
       const data = await response.json()
-      console.log(data)
+      // console.log(data)
       const updatedData = data.results.map(each => ({
         posterPath: each.poster_path,
         backdropPath: each.backdrop_path,
@@ -48,7 +49,7 @@ class Popular extends Component {
         overview: each.overview,
         title: each.title,
       }))
-      console.log(updatedData)
+      // console.log(updatedData)
       this.setState({
         popularMovies: updatedData,
         apiStatus: apiStatusConstants.success,
@@ -76,7 +77,7 @@ class Popular extends Component {
       <>
         <ul className="popular-ul-container">
           {popularMovies.map(each => (
-            <Link to={`/movies/${each.id}`}>
+            <Link to={`/movies/${each.id}`} key={each.id}>
               <li className="popular-li-item" key={each.id}>
                 <img
                   className="popular-poster"
@@ -110,6 +111,32 @@ class Popular extends Component {
     return (
       <div className="main-popular-bg-black-container">
         <Header />
+        <div className="banner-home-container">
+          <div className="banner-container">
+            <ul className="banner-left-part">
+              <Link to="/">
+                <li>
+                  <button className="banner-btn" type="button">
+                    Home
+                  </button>
+                </li>
+              </Link>
+              <Link to="/popular">
+                <li>
+                  <button className="banner-btn" type="button">
+                    Popular
+                  </button>
+                </li>
+              </Link>
+
+              <li>
+                <button className="banner-btn" type="button">
+                  Account
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
         <div className="popular-result-container">
           {this.renderPopularMovies()}
         </div>

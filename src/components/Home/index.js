@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {AiOutlineClose} from 'react-icons/ai'
+
 import Cookies from 'js-cookie'
 import Loader from 'react-loader-spinner'
 import {Link} from 'react-router-dom'
@@ -44,7 +44,7 @@ class Home extends Component {
     const response = await fetch(apiUrl, options)
     if (response.ok === true) {
       const data = await response.json()
-      console.log(data)
+      // console.log(data)
       const fetchedDataLength = data.results.length
       const randomPoster =
         data.results[Math.floor(Math.random() * fetchedDataLength)]
@@ -55,7 +55,7 @@ class Home extends Component {
         overview: randomPoster.overview,
         posterPath: randomPoster.poster_path,
       }
-      console.log(updatedData)
+      // console.log(updatedData)
       this.setState({
         initialPoster: {...updatedData},
         apiStatus: apiStatusConstants.success,
@@ -128,11 +128,6 @@ class Home extends Component {
                 </button>
               </li>
             </ul>
-            <div className="banner-right-part">
-              <button type="button" className="banner-close-btn">
-                <AiOutlineClose size={25} />
-              </button>
-            </div>
           </div>
         </div>
         <div className="home-sizes-container">{this.renderHomePoster()}</div>
