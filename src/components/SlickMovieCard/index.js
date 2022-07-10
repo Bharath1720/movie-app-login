@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 import './index.css'
 
 import Slider from 'react-slick'
@@ -13,29 +13,26 @@ const settings = {
   speed: 500,
   slidesToShow: 4,
   slidesToScroll: 4,
-  initialSlide: 0,
+
   responsive: [
     {
       breakpoint: 1024,
       settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-        dots: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
       },
     },
     {
       breakpoint: 600,
       settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        initialSlide: 2,
+        slidesToShow: 3,
+        slidesToScroll: 1,
       },
     },
     {
       breakpoint: 480,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
       },
     },
@@ -50,7 +47,11 @@ class SlickMovieCard extends Component {
         <Slider {...settings}>
           {movies.map(each => (
             <Link to={`/movies/${each.id}`} key={each.id}>
-              <li className="react-slick-li-item" key={each.id}>
+              <li
+                testid="MovieCard"
+                className="react-slick-li-item"
+                key={each.id}
+              >
                 <img
                   className="slick-movie-img"
                   src={each.posterPath}
@@ -72,4 +73,4 @@ class SlickMovieCard extends Component {
     )
   }
 }
-export default SlickMovieCard
+export default withRouter(SlickMovieCard)

@@ -6,6 +6,8 @@ import Popular from './components/Popular'
 import ProtectedRoute from './components/ProtectedRoute'
 import NotFound from './components/NotFound'
 import MovieDetailView from './components/MovieDetailsView'
+import SearchFilter from './components/SearchFilter'
+import Account from './components/Account'
 
 const App = () => (
   <Switch>
@@ -13,6 +15,8 @@ const App = () => (
     <ProtectedRoute exact path="/" component={Home} />
     <ProtectedRoute exact path="/popular" component={Popular} />
     <ProtectedRoute exact path="/movies/:id" component={MovieDetailView} />
+    <ProtectedRoute exact path="/search" component={SearchFilter} />
+    <ProtectedRoute exact path="/account" component={Account} />
     <Route path="/not-found" component={NotFound} />
     <Redirect to="not-found" />
   </Switch>

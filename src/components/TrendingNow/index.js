@@ -54,9 +54,11 @@ class TrendingNow extends Component {
     }
   }
 
-  onRetry = () => {}
+  onRetry = () => {
+    this.getTrendingMovies()
+  }
 
-  renderFailureView = () => <FailureView />
+  renderFailureView = () => <FailureView onRetry={this.onRetry} />
 
   renderLoadingView = () => (
     <div className="loader-container">

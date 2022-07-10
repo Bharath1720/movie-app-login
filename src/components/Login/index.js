@@ -29,6 +29,9 @@ class Login extends Component {
     const {history} = this.props
     Cookies.set('jwt_token', jwtToken, {expires: 30})
     history.replace('/')
+    const {username, password} = this.state
+    localStorage.setItem('username', username)
+    localStorage.setItem('password', password)
   }
 
   onSubmitFailure = errMsg => {
@@ -122,7 +125,7 @@ class Login extends Component {
       <div className="login-form-container">
         <img
           className="login-website-logo"
-          src="https://res.cloudinary.com/dyx9u0bif/image/upload/v1656594712/Group_7399_wrvd0n.png"
+          src="https://res.cloudinary.com/dyx9u0bif/image/upload/v1657426908/lg-devices-logo_rpfa68.png"
           alt="website logo"
         />
         <form className="form-container" onSubmit={this.submitForm}>

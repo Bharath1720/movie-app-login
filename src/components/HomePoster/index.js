@@ -7,6 +7,7 @@ const HomePoster = props => {
     <>
       <div
         className="sm-devices"
+        alt={title}
         style={{
           backgroundImage: `url(${posterPath})`,
           backgroundSize: '100% 100%',
@@ -15,7 +16,7 @@ const HomePoster = props => {
       >
         <div className="heading-container">
           <h1 className="home-poster-title">{title}</h1>
-          <p className="home-poster-overview">{overview}</p>
+          <h1 className="home-poster-overview">{overview}</h1>
           <button className="home-poster-play-btn" type="button">
             Play
           </button>

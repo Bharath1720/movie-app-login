@@ -84,13 +84,13 @@
   align-items: center;
 }
 
-.list-items {
+.nav-list-items {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 @media screen and (max-width: 767px) {
-  .list-items {
+  .nav-list-items {
     display: none;
   }
 }
@@ -133,17 +133,17 @@
   margin-left: 10px;
 }
 
-.active-one {
+.active {
   color: #ffffff;
   font-weight: 800;
   border-bottom: 2px solid blue;
 }
 
-.passive-one {
+.passive {
   color: #ffffff90;
 }
 
-.link {
+.nav-link {
   text-decoration: none;
   outline: none;
 }
@@ -182,7 +182,7 @@
   margin-top: 4px;
 }
 
-.pop-heading {
+.popup-heading {
   font-family: 'HK Grotesk';
   font-style: normal;
   font-weight: 500;

@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 import Header from '../Header'
 
 import './index.css'
@@ -21,9 +22,11 @@ function NotFound() {
             we are sorry, the page you requested could not be found Please go
             back to the homepage.
           </p>
-          <button className="not-found-button" type="button">
-            Go To Home
-          </button>
+          <Link className="nav-link" to="/">
+            <button className="not-found-comp-btn" type="button">
+              Go To Home
+            </button>
+          </Link>
         </div>
       </div>
     </>

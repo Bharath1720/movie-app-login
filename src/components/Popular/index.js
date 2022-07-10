@@ -61,13 +61,21 @@ class Popular extends Component {
     }
   }
 
-  onRetry = () => {}
+  onRetry = () => {
+    this.getPopularMovies()
+  }
 
-  renderFailureView = () => <FailureView />
+  renderFailureView = () => <FailureView onRetry={this.onRetry} />
 
   renderLoadingView = () => (
     <div className="loader-container">
-      <Loader type="TailSpin" height={35} width={380} color=" #D81F26" />
+      <Loader
+        testid="loader"
+        type="TailSpin"
+        height={35}
+        width={380}
+        color=" #D81F26"
+      />
     </div>
   )
 
@@ -75,6 +83,7 @@ class Popular extends Component {
     const {popularMovies} = this.state
     return (
       <>
+        <h1 className="explore-movies-here">Explore the Popular Movies Here</h1>
         <ul className="popular-ul-container">
           {popularMovies.map(each => (
             <Link to={`/movies/${each.id}`} key={each.id}>

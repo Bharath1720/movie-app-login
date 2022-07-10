@@ -102,7 +102,13 @@ class MovieDetailView extends Component {
 
   renderLoadingView = () => (
     <div className="loader-container">
-      <Loader type="TailSpin" height={35} width={380} color=" #D81F26" />
+      <Loader
+        testid="loader"
+        type="TailSpin"
+        height={35}
+        width={380}
+        color=" #D81F26"
+      />
     </div>
   )
 
@@ -152,7 +158,7 @@ class MovieDetailView extends Component {
         </div>
         <div className="additional-movie-info-container additional-info-sm-container">
           <ul className="each-genre-ul-container">
-            <h1 className="movie-info-genre-heading">genres</h1>
+            <h1 className="movie-info-genre-heading">Genres</h1>
             {genres.map(eachGenre => (
               <li className="movie-info-each-genre" key={eachGenre.id}>
                 {eachGenre.name}

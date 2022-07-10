@@ -57,3 +57,25 @@
   background-size: 100% 100%;
   /* background-size: cover; */
 }
+.not-found-comp-btn {
+  font-family: 'HK Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: #171f46;
+  width: 127px;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.not-found-videos-note {
+  margin: 10px 0px;
+}
+.not-found-videos-heading {
+  margin: 10px 0px;
+}
