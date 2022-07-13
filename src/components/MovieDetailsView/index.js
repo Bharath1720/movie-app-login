@@ -86,7 +86,7 @@ class MovieDetailView extends Component {
         movieDetails: updatedData,
         genres: genresData,
         spokenLanguages: updatedLanguagesData,
-        similarMovies: updatedSimilarData,
+        similarMovies: updatedSimilarData.slice(0, 6),
         apiStatus: apiStatusConstants.success,
       })
     } else {
@@ -199,7 +199,7 @@ class MovieDetailView extends Component {
           <h1 className="more-like-this">More like this</h1>
           <ul className="popular-ul-container similar-ul-container">
             {similarMovies.map(each => (
-              <Link to={`/movies/${each.id}`} key={each.id}>
+              <Link to={`/movies/${each.id}`} key={each.id} target="blank">
                 <li className="popular-li-item" key={each.id}>
                   <img
                     className="popular-poster"
