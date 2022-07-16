@@ -71,3 +71,20 @@
     margin-top: 10px;
   }
 }
+
+.search-filter-initial-no-search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0px;
+  min-height: 70vh;
+}
+.empty-text {
+  color: #ffffff;
+}
+@media screen and (max-width: 568px) {
+  .search-filter-initial-no-search {
+    text-align: center;
+  }    
+}

@@ -80,8 +80,8 @@ class SearchFilter extends Component {
   )
 
   renderNotfoundMovies = () => {
-    const {searchText} = this.state
-    // console.log(searchText)
+    const {searchInput} = this.state
+    console.log(searchInput)
     return (
       <div className="search-heading-container">
         <img
@@ -90,13 +90,13 @@ class SearchFilter extends Component {
           className="search-not-found-image"
         />
         <h1 className="search-not-found-heading">
-          Your search for {searchText} did not find any matches.
+          Your search for {searchInput} did not find any matches.
         </h1>
       </div>
     )
   }
 
-  renderSuccessView = () => {
+  renderResultsView = () => {
     const {searchMovies} = this.state
     return (
       <>
@@ -125,6 +125,25 @@ class SearchFilter extends Component {
           this.renderNotfoundMovies()
         )}
       </>
+    )
+  }
+
+  renderSuccessView = () => {
+    const {searchInput} = this.state
+    const isEmpty = searchInput === ''
+    console.log(isEmpty)
+    return (
+      <div>
+        {isEmpty ? (
+          <div className="search-filter-initial-no-search">
+            <p className="empty-text">
+              Search the movie,by clicking on the search Icon
+            </p>
+          </div>
+        ) : (
+          this.renderResultsView()
+        )}
+      </div>
     )
   }
 
